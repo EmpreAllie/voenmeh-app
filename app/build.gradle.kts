@@ -2,12 +2,11 @@ plugins {
     id("com.android.application")
 }
 
-val bundleId = "com.example.voenmehapp"
+val bundleId = "com.empreallie.voenmehapp"
 
 android {
     namespace = bundleId
     compileSdk = 34
-
     defaultConfig {
         applicationId = bundleId
         minSdk = 24
