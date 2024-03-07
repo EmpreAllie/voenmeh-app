@@ -1,4 +1,4 @@
-package com.example.voenmehapp.ui.dashboard;
+package com.example.voenmehapp.ui.news;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,24 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.voenmehapp.databinding.FragmentDashboardBinding;
+import com.example.voenmehapp.databinding.FragmentNewsBinding;
 
-public class DashboardFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentNewsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        NewsViewModel newsViewModel =
+                new ViewModelProvider(this).get(NewsViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textNews;
+        newsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
-        // just a comment...
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.voenmehapp.ui.home;
+package com.example.voenmehapp.ui.attendance;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,23 +10,24 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.voenmehapp.databinding.FragmentHomeBinding;
+import com.example.voenmehapp.databinding.FragmentAttendanceBinding;
 
-public class HomeFragment extends Fragment {
+public class AttendanceFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentAttendanceBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        AttendanceViewModel attendanceViewModel =
+                new ViewModelProvider(this).get(AttendanceViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentAttendanceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textAttendance;
+        attendanceViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+        // just a comment...
     }
 
     @Override

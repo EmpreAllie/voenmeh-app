@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
 }
 
-val bundleId = "com.empreallie.voenmehapp"
+val bundleId = "com.example.voenmehapp"
 
 android {
     namespace = bundleId
